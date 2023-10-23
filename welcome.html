@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+</head>
+<body>
+    <div id="root">Not Rendered</div>
+</body>
+using javasript method
+<script>
+    const welcome = document.createElement('h1')
+    welcome.innerHTML = "Welcome"
+    const root = document.getElementById('root')
+    root.appendChild(welcome)     
+</script>
+
+Using React method
+These Two lines are injecting React onto HTML file (i.e) without installing also we can use React in out code.
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script>
+    const welcome2 = React.createElement('h1',{},'Namaste')
+    const root2 = ReactDOM.createRoot(document.getElementById('root'))
+    root2.render(welcome2)
+</script>
+Creating More elements and rendering
+<script>
+    const head = React.createElement('h1',{id:"title"},"Heading 1")
+    const head1 = React.createElement('h2',{id:"h2"},"Heading 2")
+    const container = React.createElement('div',{id:"container"},[head,head1])
+    const disp = ReactDOM.createRoot(document.getElementById('root'))
+    disp.render(container)
+</script>
+</html>
