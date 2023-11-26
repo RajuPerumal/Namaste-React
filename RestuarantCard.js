@@ -6,7 +6,7 @@ const RestuarantCard =({cloudinaryImageId,name,cuisines,avgRatingString})=>{
         <div className="w-[200px] p-2 m-2 shadow-lg bg-pink-100">
             <img src={logo+cloudinaryImageId} className="Cardpic" />
             <h4 className="font-bold text-xl">{name}</h4>
-            <p>{cuisines}</p>
+            <p className="flex flex-wrap">{cuisines.join(",")}</p>
             <p>{avgRatingString} Stars</p>
         </div>
     )

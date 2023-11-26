@@ -1,5 +1,7 @@
 import { useState } from "react"
+import { useSelector } from "react-redux"
 import {Link} from "react-router-dom"
+import store from "./store"
 
 export const Title =()=>{
     return (
@@ -16,6 +18,7 @@ export const Title =()=>{
 
 const Header =()=>{
     const [loggedIn,setLoggedIn] = useState(false)
+    const cartitems =  useSelector(store =>store.cart.items )
     return(
         <div className="flex justify-between bg-purple-200">
             <Title/>
@@ -24,7 +27,7 @@ const Header =()=>{
                 <li className="p-4 font-bold "><Link to="/">Home</Link></li>
                 <li className="p-4 font-bold"><Link to="/about">About</Link></li>
                 <li className="p-4 font-bold"><Link to="/contact">Contact</Link></li>
-                <li className="p-4 font-bold ">Cart</li>
+                <li className="p-4 font-bold "><Link to="/cart">Cart {cartitems.length}</Link></li>
             </ul>
             <>
         {loggedIn? <button onClick={()=>{setLoggedIn(false)}}>Logout</button>: <button onClick={()=>{setLoggedIn(true)}}>Login</button>}

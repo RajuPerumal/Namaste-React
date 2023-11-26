@@ -9,13 +9,18 @@ import Contact from "./Contact"
 // import About from "./About"
 import Error from "./Error"
 import RestaurantMenu from "./RestaurantMenu"
+import { Provider } from "react-redux"
+import store from "./store"
+import Cart from "./Cart"
 
 const App = () => {
     return (
-        <>
+        <Provider store={store}>
+        
         <Header/>
         <Outlet/>
-        </>
+        
+        </Provider>
     ) 
 }
 
@@ -42,7 +47,11 @@ const appRouter = createBrowserRouter([
             {
                 path:"/restaurant/:resId",
                 element:<RestaurantMenu/>,
-            }
+            },
+            {
+                path:"/cart",
+                element:<Cart/>,
+            },
         ]
     },
 

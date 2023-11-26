@@ -21,7 +21,7 @@ const AppLayout = () =>{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0827989&lng=80.2754246&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
                
         const json = await data.json()
-        // console.log(json)
+        console.log(json)
         console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setallRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
@@ -37,7 +37,7 @@ const AppLayout = () =>{
     }
 
     return allRestaurants?.length === 0 ? (<Shimmer/>) :(
-        <div className="applayout">
+        <div className="mr-auto">
             
             <div className="searchContainer">
                 <input type="text" className="txt" placeholder='Search' 
