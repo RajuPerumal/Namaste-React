@@ -39,8 +39,8 @@ const AppLayout = () =>{
     return allRestaurants?.length === 0 ? (<Shimmer/>) :(
         <div className="mr-auto">
             
-            <div className="searchContainer">
-                <input type="text" className="txt" placeholder='Search' 
+            <div className="items-end ml-4">
+                <input type="text" className=" " placeholder='Search' 
                 value={searchText} 
                 onChange={(e)=>{setSearchText(e.target.value)}}
                 />

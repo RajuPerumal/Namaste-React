@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom"
 import { logo } from './Constants'
 import useRestaurantmenu from './Utilis'
 import { useDispatch } from 'react-redux'
-import { addItem } from './cartSlice'
+import { addItem, removeItems } from './cartSlice'
 
 const RestaurantMenu = () => {
     const resId = useParams()
@@ -16,6 +16,10 @@ const RestaurantMenu = () => {
       dispatch(addItem("C"))
     }
    
+    const handleClearCart =()=>{
+      dispatch(removeItems())
+    }
+    
     return (
     <>
     <div>
@@ -29,6 +33,11 @@ const RestaurantMenu = () => {
         className='p-2 m-2 bg-green-100'
         onClick={()=>{handleAddItem()}}
         >Add Item</button>
+
+        <button 
+        className='p-2 m-2 bg-green-100'
+        onClick={()=>{handleClearCart()}}
+        >Clear Cart</button>
 
     </div>
     {/* <div>

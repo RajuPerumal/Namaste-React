@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const cartSlice = createSlice({
     name:'cart',
     initialState:{
-        items:["A","B"],
+        items:[],
     },
     reducers:{//it is reducers which have more than one reducers on it
         addItem: (state, action)=>{
@@ -15,9 +15,9 @@ const cartSlice = createSlice({
             State.items = []
         },
 
-        // removeItems:(State,action)=>{
-        //     State.items.pop()
-        // },
+        removeItems:(State,action)=>{
+            State.items.pop()
+        },
     },
 })
 

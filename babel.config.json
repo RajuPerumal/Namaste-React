@@ -1,0 +1,6 @@
+{
+    // "presets": [
+    //   ["@babel/preset-env", {"targets": {"node": "current"}}], //to read import, jest
+    //           ["@babel/preset-react",{"runtime" : "automatic"}]
+    //         ] //to read jsx
+  }
